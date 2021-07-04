@@ -18,4 +18,11 @@ final lightTheme = ThemeData(
   accentColor: Colors.black,
   accentIconTheme: IconThemeData(color: Colors.white),
   dividerColor: Colors.white54,
+  scaffoldBackgroundColor: Colors.white,
+  textTheme: TextTheme(
+        headline1: TextStyle(color: Colors.black),
+        headline2: TextStyle(color: Colors.black),
+        bodyText1: TextStyle(color: Colors.black),
+        bodyText2: TextStyle(color: Colors.black),
+      ),
 );
