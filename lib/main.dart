@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
               IconButton(
                 icon: const Icon(Icons.brightness_4_rounded),
                 onPressed: () {
-                  themeObject.toggleMode;
+                  themeObject.toggleMode();
                 },
               ),
             ],
@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-             _incrementCounter;
+             _incrementCounter();
             },
             tooltip: 'Increment',
             child: Icon(Icons.add),
