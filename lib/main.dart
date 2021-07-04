@@ -33,6 +33,7 @@ class Flutter101App extends StatelessWidget {
       ),
     );
   }
+}
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title}) : super(key: key);
