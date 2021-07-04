@@ -6,26 +6,34 @@ import 'package:flutter101/utils/theme_manager.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
-    runApp(
-        ChangeNotifierProvider<ThemeChanger>(
-          create: (_) => ThemeChanger(),
-          child: Flutter101App(),
-        ),
-      );
+    runApp(new Flutter101App()),
   });
 }
 
-class Flutter101App extends StatelessWidget {
+class Flutter101App extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+  @override
+  _Flutter101AppState createState() => _Flutter101AppState();
+}
+
+class _Flutter101AppState extends State<Flutter101App> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final themeChanger = Provider.of<ThemeChanger>(context);
-    return MaterialApp(
-      title: 'Flutter 101',
-      themeMode: themeChanger.themeMode,
-      theme: themeChanger.lightTheme,
-      darkTheme: themeChanger.darkTheme,
-      home: HomePage(title: 'Flutter 101 Home Page'),
+    return ChangeNotifierProvider<ThemeChanger>(
+      create: (_) => ThemeChanger(),
+      child: Builder(
+        builder: (BuildContext context) {
+          final themeChanger = Provider.of<ThemeChanger>(context);
+          return MaterialApp(
+            title: 'Flutter 101',
+            themeMode: themeChanger.themeMode,
+            theme: themeChanger.lightTheme,
+            darkTheme: themeChanger.darkTheme,
+            home: HomePage(title: 'Flutter 101 Home Page'),
+          );
+        },
+      ),
     );
   }
 }
