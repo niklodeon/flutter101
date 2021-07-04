@@ -6,7 +6,8 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  @override
+ MyApp({Key? key}) : super(key: key);
+ @override
   _MyAppState createState() => _MyAppState();
 }
 
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, this.title}) : super(key: key);
   final String title;
 
   @override
