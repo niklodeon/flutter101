@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter101/constants/themes.dart';
 
-class ThemeChanger with ChangeNotifier {
+class ThemeChanger extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
 
   ThemeMode get themeMode => _themeMode;
