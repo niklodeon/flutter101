@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: new MyHomePage(title: 'Flutter Theme Demo'),
+      home: MyHomePage(title: 'Flutter Theme Demo'),
       title: 'Flutter Theme Demo',
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
 
 class MyHomePage extends StatefulWidget {
   final String title;
-  MyHomePage({Key? key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   
   @override
   _MyHomePageState createState() => _MyHomePageState();
