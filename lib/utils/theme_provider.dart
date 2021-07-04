@@ -12,9 +12,7 @@ class ThemeNotifier extends ChangeNotifier {
     _loadFromPrefs();
   }
 
-  ThemeData get theme(){
-    return _darkTheme ? darkTheme : lightTheme;
-  }
+  ThemeData get theme => _darkTheme ? darkTheme : lightTheme;
 
   toggleTheme(){
     _darkTheme = !_darkTheme;
