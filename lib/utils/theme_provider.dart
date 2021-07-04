@@ -4,7 +4,7 @@ import 'package:flutter101/constants/themes.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   final String key = "theme";
-  SharedPreferences _pref;
+  SharedPreferences _pref = SharedPreferences.getInstance();
   bool _darkTheme = false;
 
   ThemeNotifier() {
