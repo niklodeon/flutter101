@@ -1,22 +1,17 @@
-import 'package:flutter101/utils/theme_notifier.dart';
-import 'package:flutter101/constants/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter101/utils/theme_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
-    SharedPreferences.getInstance().then((prefs) {
-      var darkModeOn = prefs.getBool('darkMode') ?? true;
-      runApp(
+    runApp(
         ChangeNotifierProvider<ThemeNotifier>(
-          create: (_) => ThemeNotifier(darkModeOn ? darkTheme : lightTheme),
+          create: (_) => ThemeNotifier(),
           child: Flutter101App(),
         ),
       );
-    });
   });
 }
 
