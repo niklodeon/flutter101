@@ -13,10 +13,10 @@ class CustomTheme with ChangeNotifier {
   }
 
   static ThemeData get lightTheme {
-    return lightTheme;
+    return light;
   }
 
   static ThemeData get darkTheme {
-    return darkTheme;
+    return dark;
   }
 }
