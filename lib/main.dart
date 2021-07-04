@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             IconButton(
               icon: const Icon(Icons.brightness_4_rounded),
               onPressed: () {
-                currentTheme.toggleTheme();
+                themeObject.toggleMode;
               },
             ),
           ],
