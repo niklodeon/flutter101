@@ -22,7 +22,7 @@ class Flutter101App extends StatelessWidget {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return MaterialApp(
       title: 'Flutter 101',
-      theme: themeNotifier.theme,
+      theme: themeNotifier.getTheme(),
       home: HomePage(title: 'Flutter 101 Home Page'),
     );
   }
