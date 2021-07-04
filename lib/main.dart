@@ -6,7 +6,7 @@ import 'package:flutter101/utils/theme_manager.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
-    runApp(new Flutter101App()),
+    runApp(new Flutter101App())
   });
 }
 
