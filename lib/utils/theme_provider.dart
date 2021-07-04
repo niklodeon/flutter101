@@ -12,8 +12,8 @@ class ThemeNotifier extends ChangeNotifier {
     _loadFromPrefs();
   }
 
-  ThemeData getTheme(){
-    _darkTheme ? darkTheme : lightTheme;
+  ThemeData get theme(){
+    return _darkTheme ? darkTheme : lightTheme;
   }
 
   toggleTheme(){
