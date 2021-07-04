@@ -11,7 +11,7 @@ void main() {
   });
 }
 
-class Flutter101App extends StatefulWidget {
+class Flutter101App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
