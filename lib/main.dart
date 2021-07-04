@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: const Icon(Icons.brightness_4_rounded),
             onPressed: () {
-              currentTheme.toggleTheme();
+              CustomTheme.toggleTheme();
             },
           ),
         ],
