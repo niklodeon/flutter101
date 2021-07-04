@@ -11,7 +11,7 @@ void main() {
 }
 
 class Flutter101App extends StatefulWidget {
-  const MyApp({Key key}) : super(key: key);
+  const Flutter101App({Key key}) : super(key: key);
   @override
   _Flutter101AppState createState() => _Flutter101AppState();
 }
