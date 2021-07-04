@@ -23,6 +23,7 @@ class Flutter101App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter 101',
       themeMode: themeChanger.themeMode,
+      theme: themeChanger.lightTheme,
       darkTheme: themeChanger.darkTheme,
       home: HomePage(title: 'Flutter 101 Home Page'),
     );
