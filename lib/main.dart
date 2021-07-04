@@ -88,18 +88,18 @@ class _HomePageState extends State<HomePage> {
             // Here we take the value from the HomePage object that was created by
             // the App.build method, and use it to set our appbar title.
             title: Text(widget.title),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.brightness_4_rounded),
+                onPressed: () {
+                  themeObject.toggleMode;
+                },
+              ),
+            ],
           ),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.brightness_4_rounded),
-              onPressed: () {
-                themeObject.toggleMode;
-              },
-            ),
-          ],
           body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
             child: Column(
           // Column is also a layout widget. It takes a list of children and
           // arranges them vertically. By default, it sizes itself to fit its
@@ -135,7 +135,6 @@ class _HomePageState extends State<HomePage> {
             child: Icon(Icons.add),
           ), // This trailing comma makes auto-formatting nicer for build methods.
         )
-       )
       )
     );
   }
