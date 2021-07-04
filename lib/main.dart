@@ -15,9 +15,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    currentTheme.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
@@ -27,7 +24,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Theme Demo',
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,
-      themeMode: currentTheme.currentTheme,
+      themeMode: CustomTheme.currentTheme,
     );
   }
 }
