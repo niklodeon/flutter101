@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter101/utils/themes.dart';
+
+import './utils/theme_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,30 +13,26 @@ void main() {
 
 class Flutter101App extends StatefulWidget {
   @override
-  _Flutter101AppState createState() => _Flutter101AppState();
-}
-
-class _Flutter101AppState extends State<Flutter101App> {
-  // This widget is the root of your application.
-  @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CustomTheme>(
-      create: (_) => CustomTheme(),
-      child: Builder(
-        builder: (BuildContext context) {
-          final customTheme = Provider.of<CustomTheme>(context);
-          return MaterialApp(
-            title: 'Flutter 101',
-            themeMode: customTheme.themeMode,
-            theme: customTheme.lightTheme,
-            darkTheme: customTheme.darkTheme,
-            home: HomePage(title: 'Flutter 101 Home Page'),
-          );
-        },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => ThemeProvider(),
+        ),
+        //Your other providers goes here...
+      ],
+      child: Consumer<ThemeProvider>(
+        builder: (ctx, themeObject, _) => MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter 101',
+          themeMode: themeObject.mode,
+          theme: themeObject.light,
+          darkTheme: themeObject.dark,
+          home: HomePage(title: 'Flutter 101 Home Page'),
+        ),
       ),
     );
   }
-}
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title}) : super(key: key);
